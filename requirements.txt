@@ -1,0 +1,18 @@
+# Runtime deps for the Prompt Firewall Secure Access agent.
+mitmproxy>=10.0
+llama-cpp-python>=0.2.90
+pystray>=0.19          # system tray icon (optional; GUI still runs without it)
+pillow>=10.0          # tray icon image (optional, required by pystray)
+pywin32>=306          # Windows service mode + DPAPI-encrypted behavioural baseline (behavior.py)
+
+# The behavioural baseline is encrypted at rest with Windows DPAPI via pywin32.
+# Where pywin32/DPAPI is unavailable (e.g. non-Windows dev boxes) behavior.py
+# falls back to a stdlib-only authenticated-stream cipher (no extra dependency).
+# No 'cryptography' package is required.
+
+# Optional, for higher-accuracy targeted-individual detection (larger artifact):
+#   spacy>=3.7
+#   then: python -m spacy download en_core_web_sm
+
+# Build-only:
+#   pyinstaller>=6.0

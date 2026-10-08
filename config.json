@@ -1,0 +1,25 @@
+{
+  "listen_host": "127.0.0.1",
+  "listen_port": 8080,
+  "model_path": null,
+  "ai_hosts": [],
+  "paranoid": false,
+  "confdir": null,
+  "auto_port": false,
+  "gateway_label": "AI DLP Gateway (on-device)",
+  "behavior": {
+    "enabled": true,
+    "enforce": true,
+    "learn_min_events": 200,
+    "learn_days": 3,
+    "z_threshold": 3.0,
+    "rarity_threshold": 0.98,
+    "escalate_score": 4.0,
+    "thresholds": {
+      "large_transfer_bytes": 52428800,
+      "big_upload_bytes": 20971520,
+      "bulk_day_multiplier": 3.0,
+      "bulk_day_floor_bytes": 524288000
+    }
+  }
+}
